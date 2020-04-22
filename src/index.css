@@ -11,3 +11,158 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root{
+  --color2:#7f6b87;
+  --color1:#695970;
+  --color3:#463a4a;
+}
+.nav-bar{
+  position: absolute;
+  top: 6%;
+  left: 1%;
+  width: 98%;
+  height: 70px;
+  background-color: var(--color1);
+  box-shadow: 4px 4px 7px var(--color2), -4px -4px 7px var(--color3);
+}
+
+.box {
+  position: absolute;
+  display: inline-block;
+  top: 20px;
+  left:5%;
+  width: 90%;
+  height: 50px;
+  background-color: var(--color1);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px var(--color2), -2px -2px 5px var(--color3);
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-fill-mode: forwards;
+  animation: 700ms cubic-bezier(0.165, 0.84, 0.44, 1) come-up;
+}
+
+.box::after {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  left:5%;
+  width: 90%;
+  height: 50px;
+  box-shadow: 4px 4px 7px var(--color2), -4px -4px 7px var(--color3);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes come-up {
+  0% {
+    left:50%;
+    opacity: 0;
+    width: 0%;
+  }
+  100% {
+    left:5%;
+    opacity: 1;
+    width: 90%;
+  }
+}
+.nav-links{
+  height: inherit;
+  position: absolute;
+  top: 0;
+  right:7px;
+}
+.nav-icon{
+  width: 20px;
+  height: 20px;
+  padding: 7px;
+  margin: 7px 4px;
+  fill: url(#gradient);
+  animation: 700ms ease-in nav-icon-animation;
+  animation-fill-mode: forwards;
+  animation-delay: 700ms;
+  opacity: 0 ;
+
+  box-shadow: 2px 2px 7px var(--color2), -2px -2px 7px var(--color3);
+  border-radius: 5px;
+}
+
+
+@keyframes nav-icon-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+
+  }
+}
+.App{
+  position: absolute;
+  background-color: var(--color1);
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 4px 4px 7px var(--color2), inset -4px -4px 7px var(--color3);
+  
+}
+.circle{
+  border-radius: 50%;
+}
+
+.searchbox{
+  background-color: var(--color1);
+  box-shadow: inset 2px 2px 5px var(--color2), inset -2px -2px 5px var(--color3);
+  border:none;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  animation: 700ms ease-in nav-icon-animation;
+  animation-fill-mode: forwards;
+  animation-delay: 700ms;
+  opacity: 0 ;
+}
+.search{
+  background-color: transparent;
+  position: absolute;
+  top: 5px;
+  height: 20px;
+  width: 150px;
+  border: 5px;
+  color: white;
+}
+.search-btn{
+  width: 20px;
+  height: 20px;
+  padding: 7px;
+  fill: url(#gradient);
+  
+  
+}
+@media only screen and (min-width: 600px) {
+  .box{
+    height: 70px;
+  }
+  .nav-icon{
+    width: 40px;
+    height: 40px;
+  }
+  .search-btn{
+    width: 40px;
+    height: 40px;
+  }
+  .searchbox{
+    top :5px;
+    height: 60px;
+    width: 400px;
+  }
+
+}
+
+
+
