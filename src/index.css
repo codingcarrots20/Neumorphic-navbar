@@ -161,6 +161,11 @@ code {
     height: 60px;
     width: 400px;
   }
+  .search{
+    height: 44px;
+    width: 300px;
+    font-size: 22px;
+  }
 
 }
 
